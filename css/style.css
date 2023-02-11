@@ -1,0 +1,50 @@
+:root {
+    --needle-w: 3px;
+    --needle-offset: 2rem;
+    --needle-color: #971414;
+    --clock-size: 30rem;
+    --clock-bg: url(../assets/clock.png);
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.clock {
+    width: var(--clock-size);
+    height: var(--clock-size);
+    background-image: var(--clock-bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hour,
+.minute,
+.second {
+    position: absolute;
+    overflow: hidden;
+    width: var(--needle-w);
+    height: calc(var(--clock-size) - var(--needle-offset));
+    background-color: transparent;
+    border-radius: 100% 100% 5px 5px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.hour div,
+.minute div,
+.second div {
+    position: relative;
+    top: 0;
+    height: calc((var(--clock-size) / 2) - calc(var(--needle-offset) / 2));
+    background-color: var(--needle-color);
+}
